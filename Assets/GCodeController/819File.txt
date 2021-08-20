@@ -1,0 +1,138 @@
+						Tormach Position				SetParent	
+pageIndex	menuText.txt 	highlightOrder	ObjectSelection	AnimatorParent/AnimatorSequnce	Speed	X	Y	Z	AttentionPointer	Parent	Child 
+	% Structure				0.2	0	0	0			
+					0.2	0	0	0			
+	% Start				0.2	0	0	0			
+					0.2	0	0	0			
+	%Main				0.2	0	0	0			
+					0.2	0	0	0			
+	%Procedural Instruction				0.2	0	0	0			
+					0.2	0	0	0			
+	Work Coordinate System Alignment				0.2	0	0	0			
+	Work Coordinate System Alignment is the process of establishing the relative position of the stock material to the machine.										
+	Learning Objective: Given the milling machine, fixtures, stock, and endmill, and edgefinder:  Establish an X & Y axis origin in alignment with the stock. The accuracy of the origin should be within .001” in.				0.2	0	0	0			
+	Note: The following Work Coordinate System uses a Edge Finder.	EdgefinderTH			0.2	0	0	0	EdgefinderTH		
+	The edgefinder is used to precisely indicate off the stock and locate the edges of the stock. 	EdgefinderTH			0.2	0	0	0			
+	The probe is the lower, movable portion of the tool. This edgefinder is placed in a tool holder for use.	TIP			0.2	0	0	0			
+	Let's begin the process of aligning the coordinate systems. 				0.2	0	0	0			
+	Identify the Work Coordinate System that is being used in the CAM program.	AlignmentPartCAM	AlignmentPartCAM	CAMWCS	0.2	0	0	0	AlignmentWCSCAM		
+	The origin used in the CAM program MUST match the coordinate system that we define on the stock material.	AlignmentPartCAM	AlignmentWCSStock	WCSMatching	0.2	0	0	0			
+	Place the edge finder in a collet or chuck	1EDGE-FINDER	1EDGE-FINDER	EdgefinderAssembly	0.2	0	0	0			
+	Place edge finder into machine	EdgefinderTH	EdgefinderTH	Toolholder Placement	0.2	0	0	0			
+	Place edge finder into machine				0.2	0	0	0		ToolHolderPosition	EdgefinderTH
+	Offset the edge finder to have the probe rotate off-center	EdgefinderTH	TIP	WPEF	0.2	0	0	0			
+	Turn the spindle on and run between 500-1000 RPM				0.2	0	0	0			
+	Move the work piece and approach the side of the stock that is collinear with the X axis.				0.2	0.2	0	-0.3	AlignmentWCSStock		
+	Slowly continue to move the edge finder to the side of the stock. As the probe and stock contact, the rotation will appear more concentric.				0.2	0.1525	0	-0.3			
+	Continue very incrementally (.0005” ) until the edge finder probe pops out of concentricity. This is the indication that the tool has come in contact with the edge. 				0.2	0.15	0	-0.3	XZero		
+	Set the X axis location to be ½ the diameter of the probe offset from 0. 	XZero			0.2	0	0	0			
+					0.2	0	0	0			
+	Tool  Length Offset				0.2	0	0	0			
+	Tool  Length Offset Procedure: Tool Setter Method				0.2	0	0	0			
+					0.2	0	0	0			
+	Note: The toolsetter is a specialized measurement tool and is calibrated to measure the distance from the bottom of the tool setter to the top of the pressure measurement pad.	ToolOffsetter	ToolOffsetter	ToolIOffsetterPath	0.2	0	0	0			
+	Place the desired end mill in the collet and affix the drawbar to clamp the endmill.	EndmillTH			0.2	0	0	0			
+	Place the tool setter on the top of the stock in a stable, flat region.	ToolOffsetter	ToolOffsetter	OffsetterPath	0.2	0	0	0	ToolOffsetter		
+	Calibrate the tool setter following the included instructions. The tool setter should read 0.000” when it is extended a total distance of 2.000”, from the base of the tool setter to the pressure pad.				0.2	0	0	0			
+	Lower the tool until the pressure pad of the tool setter and the endmill are just touching.				0.2	0	0	-0.865			
+	Very slowly (.001” increments) lower the tool (CNC) until the tool depresses the tool setter until it reads 0.000” or a value slightly under.				0.05	0	0	-0.9			
+	Zero the axis when the tool offsetter reads 0.000.				0.2	0	0	0	ZZeroButton		
+	Alternatively, set the Z position by entering the value after G92. G92 is the G-code command for setting axis position.				0.2	0	0	0			
+					0.2	0	0	0			
+	Tool  Length Offset Procedure: Paper Contact Method				0.2	0	0	0			
+	Step 1.				0.2	0	0	0			
+	Place a piece of printer paper on top of the stock.				0.2	0	0	0			
+	Step 2.				0.2	0	0	0			
+	Lower the tool very slowly onto the paper. Move the paper back and forth constantly				0.2	0	0	0			
+	Step 3.				0.2	0	0	0			
+	Continue lowering the tool until you are unable to move the paper. The tool should snag on the paper.				0.2	0	0	0			
+	Step 4.				0.2	0	0	0			
+	Raise the tool .001” or very gradually until the paper can move again.				0.2	0	0	0			
+	Step 5.				0.2	0	0	0			
+	Set the Z position to be .005" (thickness of the paper)				0.2	0	0	0			
+					0.2	0	0	0			
+					0.2	0	0	0			
+	Fixturing				0.2	0	0	0			
+					0.2	0	0	0			
+	The fixturing process will vary for each part. Different sizes & shapes of parts will have different requirements.				0.2	0	0	0			
+	A vice is the most common form of fixturing.				0.2	0	0	0			
+	A vice can be used and adjusted for a wide range of stock. 				0.2	0	0	0			
+	First, clean the vice of any oil or metal chips. 				0.2	0	0	0			
+	Place square stock in the center of the vice. 				0.2	0	0	0			
+	If the stock does not clear the top of the vice, parralels can be used to elevate the stock. 				0.2	0	0	0			
+	Alternate fixturing may be required for more complex parts. For example:<br> \u2022 Circular Stock <br> \u2022 Perimeter Needs To Be Machined <br> \u2022 Large Stock				0.2	0	0	0			
+	There are three common requirements for all fixtures::<br> \u2022 1. Sufficient clamping force:<br> \u2022 2. Will not collide with the tool:<br> \u2022 3. Fixture provides access to area being machined.				0.2	0	0	0			
+	For repetitive machining, efficient processes are very important. A vice stop can be used to maintain a similar reference point. 				0.2	0	0	0			
+					0.2	0	0	0			
+					0.2	0	0	0			
+					0.2	0	0	0			
+	% Error Management				0.2	0	0	0			
+					0.2	0	0	0			
+	%% Work Coordinate System Errors				0.2	0	0	0			
+					0.2	0	0	0			
+	Incorrect Corner Reference				0.2	0	0	0			
+	<b> Error: </b> The work coordinate system was established on the wrong corner of the part				0.2	0	0	0			
+	<b> Consequence: </b> <br><align="left"> \u2022 Tool crashes with fixture  <br> \u2022 Tool breaks  <br> \u2022 Fixture is machine  <br> \u2022 Machine cuts air  <br> \u2022 No tool engagement				0.2	0	0	0			
+	<b>Mitigation:</b> <br> <align="left">Travel to X0 Y0 at a height above the part. Verify location matches the 				0.2	0	0	0			
+					0.2	0	0	0			
+	Orientation Error				0.2	0	0	0			
+	<b>Error:</b> <br> <align="left">Stock is fixtures at an orientation different than the CAM program. 				0.2	0	0	0			
+	<b>Consequence: </b> <br>				0.2	0	0	0			
+	<b> Mitigation: </b> <br><align="left"> Review GCode.  <br> \u2022 Locate Z positions. <br> \u2022 Negative Z positions indicate a stock top reference.  <br> \u2022 Positive Z positions reference friom stock bottom.				0.2	0	0	0			
+					0.2	0	0	0			
+	WCS & Indicating Disconnect				0.2	0	0	0			
+	<b>Error:</b> <br><align="left"> Wrong Z0 referenced. Swapped top of stock & bottom of stock as Z0 reference.				0.2	0	0	0			
+	<b> Consequence:</b> <br><align="left"> No part engagement/cutting air 				0.2	0	0	0			
+	<b> Mitigation: </b> <br> <align="left">Review GCode. <br> \u2022 Locate Z positions. <br> \u2022 Negative Z positions indicate a stock top reference. <br> \u2022 Positive Z positions reference friom stock bottom.				0.2	0	0	0			
+					0.2	0	0	0			
+	Z Zero Reference 				0.2	0	0	0			
+	<b> Error:</b> <br> <align="left"> Wrong Z0 referenced. Swapped top of stock & bottom of stock as Z0 reference.				0.2	0	0	0			
+	<b>Consequence:</b> <br><align="left"> No part engagement/cutting air 				0.2	0	0	0			
+	<b>Mitigation:</b> <br> <align="left"> Review GCode.  <br> \u2022 Locate Z positions. <br> \u2022 Negative Z positions indicate a stock top reference.  <br> \u2022 Positive Z positions reference from stock bottom.				0.2	0	0	0			
+					0.2	0	0	0			
+					0.2	0	0	0			
+	%% Fixturing Errors				0.2	0	0	0			
+	Fixture Toolpath Collision 				0.2	0	0	0			
+	<b>Error:</b> <br> Fixture located in the way of the toolpath				0.2	0	0	0			
+	<b>Consequence:</b> <br> <align="left"> The tool will crash into the fixture. <br> \u2022 The tool will likely break and the fixture will be damaged.<br> \u2022 Damage to the machine is also possible. 				0.2	0	0	0			
+	<b>Mitigation:</b> <br> <align="left"> Test the toolpath above & to the side of the fixture so the tool does not engage any material. 				0.2	0	0	0			
+	For complex fixtures, the fixture should be modeled into the CAM process. Simulate any tool collisions. 				0.2	0	0	0			
+					0.2	0	0	0			
+	Insufficient Clamping				0.2	0	0	0			
+	<b>Error:</b> <br> The selected fixture does not apply enough pressure to prevent the stock from moving.				0.2	0	0	0			
+	This is caused by not having enough surface area clamped				0.2	0	0	0			
+	<b> Consequence:</b> <br> The part moves and part must be scrapped. Very insufficient clamping can create a safety concern.				0.2	0	0	0			
+	<b>Mitigation:</b><br> Clamp two sides of the stock or at least 3 contact points for cylindrical parts. 				0.2	0	0	0			
+	A bump test with a rubber mallet should not visibly move the part. 				0.2	0	0	0			
+					0.2	0	0	0			
+	Parallelism Errors				0.2	0	0	0			
+	<b>Error:<b><br> Stock is not seated flush on the table. 				0.2	0	0	0			
+	<b>Cause:</b> <br> Machining chips are in between the stock and vice, parralels were not used, 				0.2	0	0	0			
+	<b>Consequence:<b><br> Machining plane and stock are not parralel 				0.2	0	0	0			
+	<b>Mitigation:</b><br> Clean the stock and fixture of any chips that could offset part. <br> Use parralels in the vice. <br> Tap part downward with a mallet to make sure part is completly seated. 				0.2	0	0	0			
+					0.2	0	0	0			
+	%% Tool Length Offset Errors				0.2	0	0	0			
+	Incorrect Tool 				0.2	0	0	0			
+	<b>Error:</b><br> Wrong tool in toolholder				0.2	0	0	0			
+	<b>Consequence: </b><br>If real tool < offset, tool cuts air. Real tool length > offset, tool will crash into the part or take a  larger cut. If diameter				0.2	0	0	0			
+	<align="left">				0.2	0	0	0			
+	<b>Mitigation:<b><br> When tool is created or modified: :<br> 1. Move the tool to a given Z position well above the table/established Z 0 position.<br> Compare the distance between Z0 reference and the tool. :<br> Values should be equal, if correct.  				0.2	0	0	0			
+					0.2	0	0	0			
+	Incorrect Tool Length Data				0.2	0	0	0			
+	<b>Error:<b></br>Toollength has changed. Adjustments have been made and offset length is outdated				0.2	0	0	0			
+	<b>Consequence: </b><br>If real tool < offset, tool cuts air. Real tool length > offset, tool will crash into the part or take a  larger cut.				0.2	0	0	0			
+	Depending on mangnitude of the error, the tool may also crash with the table or fixture under the stock. 				0.2	0	0	0			
+	<b>Mitigation:<b><br> When tool is created or modified: :<br> 1. Move the tool to a given Z position well above the table/established Z 0 position.<br> Compare the distance between Z0 reference and the tool. :<br> Values should be equal, if correct.  				0.2	0	0	0			
+					0.2	0	0	0			
+	Measurement Error				0.2	0	0	0			
+	Error: Measurement process referenced incorrect distances				0.2	0	0	0			
+	<b>Consequence: </b><br>If real tool < offset, tool cuts air. Real tool length > offset, tool will crash into the part or take a  larger cut.				0.2	0	0	0			
+	Depending on mangnitude of the error, the tool may also crash with the table or fixture under the stock. 				0.2	0	0	0			
+	<b>Mitigation:<b><br> When tool is created or modified: :<br> 1. Move the tool to a given Z position well above the table/established Z 0 position.<br> Compare the distance between Z0 reference and the tool. :<br> Values should be equal, if correct.  				0.2	0	0	0			
+					0.2	0	0	0			
+					0.2	0	0	0			
+					0.2	0	0	0			
+					0.2	0	0	0			
+	%Second Zone				0.2	0	0	0			
+	*Step 2.				0.2	0	0	0			
+	This is the second step										

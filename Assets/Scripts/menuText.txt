@@ -1,0 +1,1038 @@
+% Structure
+
+% Start
+
+%Main
+
+%Procedural Instruction
+
+%% Work Coordinate System Alignment
+Note: The following Work Coordinate System uses a Edge Finder.
+Learning Objective: Given the milling machine, fixtures, stock, and endmill, and edgefinder:  Establish an X & Y axis origin in alignment with the stock. The accuracy of the origin should be within .001” in.
+The edgefinder is used to precisely indicate off the stock and locate the edges of the stock. 
+The probe is the lower, movable portion of the tool. This edgefinder is placed in a tool holder for use.
+Let's begin the process of aligning the coordinate systems. 
+Identify the Work Coordinate System that is being used in the CAM program.
+The origin used in the CAM program MUST match the coordinate system that we define on the stock material.
+Place the edge finder in a collet or chuck
+Place edge finder into machine
+Place edge finder into machine
+Offset the edge finder to have the probe rotate off-center
+Turn the spindle on and run between 500-1000 RPM
+Move the work piece and approach the side of the stock that is collinear with the X axis.
+Slowly continue to move the edge finder to the side of the stock. As the probe and stock contact, the rotation will appear more concentric.
+Continue very incrementally (.0005” ) until the edge finder probe pops out of concentricity.
+Set the X axis location to be ½ the diameter of the probe offset from 0. 
+
+%% Tool Offset
+&&& Tool Setter
+
+Note: The toolsetter is a specialized measurement tool and is calibrated to measure the distance from the bottom of the tool setter to the top of the pressure measurement pad.
+Place the desired end mill in the collet and affix the drawbar to clamp the endmill.
+Place the tool setter on the top of the stock in a stable, flat region.
+Calibrate the tool setter following the included instructions. The tool setter should read 0.000” when it is extended a total distance of 2.000”, from the base of the tool setter to the pressure pad.
+Lower the tool until the pressure pad of the tool setter and the endmill are just touching.
+Very slowly (.001” increments) lower the tool (CNC) until the tool depresses the tool setter until it reads 0.000” or a value slightly under.
+Zero the axis when the tool offsetter reads 0.000.
+Alternatively, set the Z position by entering the value after G92. G92 is the G-code command for setting axis position.
+
+&&& Paper Method
+Step 1.
+Place a piece of printer paper on top of the stock.
+Step 2.
+Lower the tool very slowly onto the paper. Move the paper back and forth constantly
+Step 3.
+Continue lowering the tool until you are unable to move the paper. The tool should snag on the paper.
+Step 4.
+Raise the tool .001” or very gradually until the paper can move again.
+Step 5.
+Set the Z position to be .005" (thickness of the paper)
+
+
+%% Fixturing
+
+The fixturing process will vary for each part. Different sizes & shapes of parts will have different requirements.
+A vice is the most common form of fixturing.
+A vice can be used and adjusted for a wide range of stock. 
+First, clean the vice of any oil or metal chips. 
+Place square stock in the center of the vice. 
+If the stock does not clear the top of the vice, parralels can be used to elevate the stock. 
+Alternate fixturing may be required for more complex parts. For example:<br> \u2022 Circular Stock <br> \u2022 Perimeter Needs To Be Machined <br> \u2022 Large Stock
+
+
+
+There are three common requirements for all fixtures::<br> \u2022 1. Sufficient clamping force:<br> \u2022 2. Will not collide with the tool:<br> \u2022 3. Fixture provides access to area being machined.
+For repetitive machining, efficient processes are very important. A vice stop can be used to maintain a similar reference point. 
+% Error Management
+
+%% Work Coordinate System Errors
+
+Incorrect Corner Reference
+<b> Error: </b> The work coordinate system was established on the wrong corner of the part
+<b> Consequence: </b> <br><align="left"> \u2022 Tool crashes with fixture  <br> \u2022 Tool breaks  <br> \u2022 Fixture is machine  <br> \u2022 Machine cuts air  <br> \u2022 No tool engagement
+<b>Mitigation:</b> <br> <align="left">Travel to X0 Y0 at a height above the part. Verify location matches the 
+
+Orientation Error
+<b>Error:</b> <br> <align="left">Stock is fixtures at an orientation different than the CAM program. 
+<b>Consequence: </b> <br>
+<b> Mitigation: </b> <br><align="left"> Review GCode.  <br> \u2022 Locate Z positions. <br> \u2022 Negative Z positions indicate a stock top reference.  <br> \u2022 Positive Z positions reference friom stock bottom.
+
+WCS & Indicating Disconnect
+<b>Error:</b> <br><align="left"> Wrong Z0 referenced. Swapped top of stock & bottom of stock as Z0 reference.
+<b> Consequence:</b> <br><align="left"> No part engagement/cutting air 
+<b> Mitigation: </b> <br> <align="left">Review GCode. <br> \u2022 Locate Z positions. <br> \u2022 Negative Z positions indicate a stock top reference. <br> \u2022 Positive Z positions reference friom stock bottom.
+
+Z Zero Reference 
+<b> Error:</b> <br> <align="left"> Wrong Z0 referenced. Swapped top of stock & bottom of stock as Z0 reference.
+<b>Consequence:</b> <br><align="left"> No part engagement/cutting air 
+<b>Mitigation:</b> <br> <align="left"> Review GCode.  <br> \u2022 Locate Z positions. <br> \u2022 Negative Z positions indicate a stock top reference.  <br> \u2022 Positive Z positions reference from stock bottom.
+
+
+%% Fixturing Errors
+Fixture Toolpath Collision 
+<b>Error:</b> <br> Fixture located in the way of the toolpath
+<b>Consequence:</b> <br> <align="left"> The tool will crash into the fixture. <br> \u2022 The tool will likely break and the fixture will be damaged.<br> \u2022 Damage to the machine is also possible. 
+<b>Mitigation:</b> <br> <align="left"> Test the toolpath above & to the side of the fixture so the tool does not engage any material. 
+For complex fixtures, the fixture should be modeled into the CAM process. Simulate any tool collisions. 
+
+Insufficient Clamping
+<b>Error:</b> <br> The selected fixture does not apply enough pressure to prevent the stock from moving.
+This is caused by not having enough surface area clamped
+<b> Consequence:</b> <br> The part moves and part must be scrapped. Very insufficient clamping can create a safety concern.
+<b>Mitigation:</b><br> Clamp two sides of the stock or at least 3 contact points for cylindrical parts. 
+A bump test with a rubber mallet should not visibly move the part. 
+
+Parallelism Errors
+<b>Error:<b><br> Stock is not seated flush on the table. 
+<b>Cause:</b> <br> Machining chips are in between the stock and vice, parralels were not used, 
+<b>Consequence:<b><br> Machining plane and stock are not parralel 
+<b>Mitigation:</b><br> Clean the stock and fixture of any chips that could offset part. <br> Use parralels in the vice. <br> Tap part downward with a mallet to make sure part is completly seated. 
+
+%% Tool Length Offset Errors
+Incorrect Tool
+<b>Error:</b><br> Wrong tool in toolholder
+<b>Consequence: </b><br>If real tool < offset, tool cuts air. Real tool length > offset, tool will crash into the part or take a  larger cut.
+<align="left">
+<b>Mitigation:<b><br> When tool is created or modified: :<br> 1. Move the tool to a given Z position well above the table/established Z 0 position.<br> Compare the distance between Z0 reference and the tool. :<br> Values should be equal, if correct.  
+
+Incorrect Tool Length Data
+<b>Error:<b></br>Toollength has changed. Adjustments have been made and offset length is outdated
+<b>Consequence: </b><br>If real tool < offset, tool cuts air. Real tool length > offset, tool will crash into the part or take a  larger cut.
+Depending on mangnitude of the error, the tool may also crash with the table or fixture under the stock. 
+<b>Mitigation:<b><br> When tool is created or modified: :<br> 1. Move the tool to a given Z position well above the table/established Z 0 position.<br> Compare the distance between Z0 reference and the tool. :<br> Values should be equal, if correct.  
+
+Measurement Error
+Error: Measurement process referenced incorrect distances
+<b>Consequence: </b><br>If real tool < offset, tool cuts air. Real tool length > offset, tool will crash into the part or take a  larger cut.
+Depending on mangnitude of the error, the tool may also crash with the table or fixture under the stock. 
+<b>Mitigation:<b><br> When tool is created or modified: :<br> 1. Move the tool to a given Z position well above the table/established Z 0 position.<br> Compare the distance between Z0 reference and the tool. :<br> Values should be equal, if correct.  
+
+
+
+
+%Second Zone
+*Step 2.
+This is the second step
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

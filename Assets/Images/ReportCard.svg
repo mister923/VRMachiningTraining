@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1500mm"
+   height="1075mm"
+   viewBox="0 0 1500 1075"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="ReportCard.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.13289991"
+     inkscape:cx="2020.3175"
+     inkscape:cy="1945.0729"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect1939"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,26.458333,0,6 @ F,0,0,1,0,26.458333,0,6 @ F,0,0,1,0,26.458333,0,6 @ F,0,0,1,0,26.458333,0,6"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="100"
+       chamfer_steps="6"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Layer 4"
+     style="display:inline">
+    <path
+       id="rect31-9"
+       style="display:inline;fill:#dfe6e9;fill-opacity:1;fill-rule:evenodd;stroke-width:3.33675"
+       d="M -148.03326,1094.082 H 1299.0501 a 26.458333,26.458333 135 0 0 26.4583,-26.4583 V 45.540364 A 26.458333,26.458333 45 0 0 1299.0501,19.082031 H -148.03326 a 26.458333,26.458333 135 0 0 -26.45833,26.458333 V 1067.6237 a 26.458333,26.458333 45 0 0 26.45833,26.4583 z"
+       inkscape:path-effect="#path-effect1939"
+       inkscape:original-d="m -174.49159,1094.082 c 500.00002,0 1000.00005,0 1499.99999,0 0,-358.3333 0,-716.66663 0,-1074.999969 -499.99994,0 -999.99997,0 -1499.99999,0 0,358.333339 0,716.666669 0,1074.999969 z"
+       transform="translate(174.49159,-19.082031)" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Layer 3"
+     style="display:inline">
+    <rect
+       style="display:inline;fill:#0984e3;fill-opacity:1;fill-rule:evenodd;stroke-width:2.8761"
+       id="rect31"
+       width="1200"
+       height="1000"
+       x="88.008408"
+       y="56.581978"
+       transform="translate(174.49159,-19.082031)" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2"
+     style="display:inline">
+    <rect
+       style="display:inline;fill:#dfe6e9;fill-opacity:1;stroke-width:0.501"
+       id="rect2580-1-1-1-5-7-9"
+       width="499.99997"
+       height="161.41406"
+       x="316.39587"
+       y="363.21643" />
+    <rect
+       style="display:inline;fill:#dfe6e9;fill-opacity:1;stroke-width:0.501"
+       id="rect2580-1-1-1-5-7-9-3"
+       width="499.99997"
+       height="161.41406"
+       x="316.39587"
+       y="590.78601" />
+    <rect
+       style="display:inline;fill:#dfe6e9;fill-opacity:1;stroke-width:0.501"
+       id="rect2580-1-1-1-5-7-9-3-2"
+       width="499.99997"
+       height="161.41406"
+       x="316.39587"
+       y="815.65161" />
+  </g>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(174.49159,-19.082031)"
+     style="display:inline">
+    <rect
+       style="fill:#2d3436;fill-opacity:1;fill-rule:evenodd;stroke-width:0.41513"
+       id="rect31-4"
+       width="25"
+       height="1000"
+       x="63.008404"
+       y="56.581978" />
+    <rect
+       style="fill:#636e72;fill-opacity:1;stroke-width:2.44351"
+       id="rect1438"
+       width="200"
+       height="1000"
+       x="-136.99159"
+       y="56.581978" />
+    <rect
+       style="fill:#dfe6e9;fill-opacity:1;stroke-width:1.09213"
+       id="rect2580-1-1-1-5-7"
+       width="555.09009"
+       height="690.90857"
+       x="706.20886"
+       y="340.39572" />
+    <rect
+       style="fill:#dfe6e9;stroke-width:0.264583"
+       id="rect7187"
+       width="8.4464464"
+       height="11.26193"
+       x="929.17749"
+       y="562.47009" />
+    <text
+       xml:space="preserve"
+       style="font-size:47.5611px;line-height:1.25;font-family:sans-serif;display:inline;stroke-width:0.356708"
+       x="111.94865"
+       y="367.23773"
+       id="text12361-7"><tspan
+         sodipodi:role="line"
+         id="tspan12359-4"
+         style="stroke-width:0.356708;font-weight:normal"
+         x="111.94865"
+         y="367.23773">Work Coordinate Errors</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;line-height:1.25;font-family:sans-serif;display:inline;stroke-width:0.356708"
+       x="224.79489"
+       y="421.92987"
+       id="text12361-7-93"><tspan
+         sodipodi:role="line"
+         id="tspan12359-4-5"
+         style="font-size:40px;stroke-width:0.356708"
+         x="224.79489"
+         y="421.92987">Incorrect Corner</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;line-height:1.25;font-family:sans-serif;display:inline;stroke-width:0.356708"
+       x="213.81833"
+       y="524.35779"
+       id="text12361-7-93-2"><tspan
+         sodipodi:role="line"
+         id="tspan12359-4-5-3"
+         style="font-size:40px;stroke-width:0.356708"
+         x="213.81833"
+         y="524.35779">Z Zero Placement</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;line-height:1.25;font-family:sans-serif;display:inline;stroke-width:0.356708"
+       x="178.95505"
+       y="469.26688"
+       id="text12361-7-93-4"><tspan
+         sodipodi:role="line"
+         id="tspan12359-4-5-0"
+         style="font-size:40px;stroke-width:0.356708"
+         x="178.95505"
+         y="469.26688">Improper Orientation</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:47.5611px;line-height:1.25;font-family:sans-serif;display:inline;stroke-width:0.356708"
+       x="264.72244"
+       y="595.12506"
+       id="text12361-7-9"><tspan
+         sodipodi:role="line"
+         id="tspan12359-4-7"
+         style="stroke-width:0.356708"
+         x="264.72244"
+         y="595.12506">Tool Errors</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:47.5611px;line-height:1.25;font-family:sans-serif;display:inline;stroke-width:0.356708"
+       x="198.62924"
+       y="817.79895"
+       id="text12361-7-9-0"><tspan
+         sodipodi:role="line"
+         id="tspan12359-4-7-4"
+         style="stroke-width:0.356708"
+         x="198.62924"
+         y="817.79895"> Fixturing Errors</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;line-height:1.25;font-family:sans-serif;display:inline;stroke-width:0.356708"
+       x="280.87888"
+       y="652.72992"
+       id="text12361-7-93-0"><tspan
+         sodipodi:role="line"
+         id="tspan12359-4-5-2"
+         style="font-size:40px;stroke-width:0.356708"
+         x="280.87888"
+         y="652.72992">Wrong Tool</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;line-height:1.25;font-family:sans-serif;display:inline;stroke-width:0.356708"
+       x="281.11325"
+       y="874.39111"
+       id="text12361-7-93-0-0"><tspan
+         sodipodi:role="line"
+         id="tspan12359-4-5-2-7"
+         style="font-size:40px;stroke-width:0.356708"
+         x="281.11325"
+         y="874.39111">Parralelism</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;line-height:1.25;font-family:sans-serif;display:inline;stroke-width:0.356708"
+       x="309.23825"
+       y="925.40967"
+       id="text12361-7-93-0-0-7"><tspan
+         sodipodi:role="line"
+         id="tspan12359-4-5-2-7-3"
+         style="font-size:40px;stroke-width:0.356708"
+         x="309.23825"
+         y="925.40967">Collision</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;line-height:1.25;font-family:sans-serif;display:inline;stroke-width:0.356708"
+       x="178.00778"
+       y="745.77118"
+       id="text12361-7-93-2-3"><tspan
+         sodipodi:role="line"
+         id="tspan12359-4-5-3-5"
+         style="font-size:40px;stroke-width:0.356708"
+         x="178.00778"
+         y="745.77118">Length Measurement </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;line-height:1.25;font-family:sans-serif;display:inline;stroke-width:0.356708"
+       x="200.05856"
+       y="698.58069"
+       id="text12361-7-93-4-5"><tspan
+         sodipodi:role="line"
+         id="tspan12359-4-5-0-4"
+         style="font-size:40px;stroke-width:0.356708"
+         x="200.05856"
+         y="698.58069">Incorrect Tool Data</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:49.2024px;line-height:1.25;font-family:sans-serif;display:inline;stroke-width:0.369018"
+       x="780.31622"
+       y="315.32858"
+       id="text12361"
+       transform="scale(0.96664084,1.0345104)"><tspan
+         sodipodi:role="line"
+         id="tspan12359"
+         style="stroke-width:0.369018"
+         x="780.31622"
+         y="315.32858">Your Identifications</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;line-height:1.25;font-family:sans-serif;display:inline;stroke-width:0.356708"
+       x="179.29684"
+       y="972.69788"
+       id="text12361-7-93-0-1"><tspan
+         sodipodi:role="line"
+         id="tspan12359-4-5-2-9"
+         style="font-size:40px;stroke-width:0.356708"
+         x="179.29684"
+         y="972.69788">Insufficient Clamping</tspan></text>
+    <rect
+       style="display:inline;fill:#b2bec3;fill-opacity:1;stroke-width:0.501"
+       id="rect2580-1-1-1-5-7-9-2"
+       width="499.99997"
+       height="161.41406"
+       x="733.75391"
+       y="382.29846" />
+    <rect
+       style="display:inline;fill:#b2bec3;fill-opacity:1;stroke-width:0.501"
+       id="rect2580-1-1-1-5-7-9-3-7"
+       width="499.99997"
+       height="161.41406"
+       x="733.75391"
+       y="609.86804" />
+    <rect
+       style="display:inline;fill:#b2bec3;fill-opacity:1;stroke-width:0.501"
+       id="rect2580-1-1-1-5-7-9-3-2-1"
+       width="499.99997"
+       height="161.41406"
+       x="733.75391"
+       y="834.73364" />
+  </g>
+</svg>
